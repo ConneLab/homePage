@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Users, Sparkles, ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
+import { Building2, Sparkles, ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
 
 function App() {
   return (
