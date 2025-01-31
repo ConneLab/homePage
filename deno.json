@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": ["dist/", "node_modules/"]
+  },
+  "tasks": {
+    "dev": "npx vite --host",
+    "build": "npx vite build"
+  }
+}
