@@ -72,11 +72,11 @@ function App() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-            {/*<img 
+              <img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"
                 alt="Modern office"
                 className="rounded-2xl shadow-lg"
-            />*/}
+              />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-[#2A2522] mb-6">会社概要</h2>
