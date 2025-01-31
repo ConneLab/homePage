@@ -1,9 +1,20 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Building2, Sparkles, ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
 
 function App() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
+      <Helmet>
+        <meta property="og:title" content="ConneLab HomePage" />
+        <meta property="og:description" content="「今あるものをより便利に」という理念のもと、 常に最先端の技術とトレンドを追求し、 お客様のビジネスの成長と成功をサポートしています。" />
+        <meta property="og:url" content="https://www.connelab.jp/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ConneLab" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ConneLab HomePage" />
+        <meta name="twitter:description" content="「今あるものをより便利に」という理念のもと、 常に最先端の技術とトレンドを追求し、 お客様のビジネスの成長と成功をサポートしています。" />
+      </Helmet>
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-sm fixed w-full z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
