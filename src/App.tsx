@@ -8,6 +8,7 @@ import {
   Linkedin,
   Twitter,
 } from "lucide-react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function openEmail(event, subjectRef, nameRef, messageRef) {
   event.preventDefault();
@@ -262,6 +263,7 @@ function App() {
           </div>
         </div>
       </footer>
+    <SpeedInsights/>
     </div>
   );
 }
