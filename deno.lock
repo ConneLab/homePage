@@ -5,6 +5,7 @@
     "npm:@types/react-dom@^18.3.0": "18.3.5_@types+react@18.3.18",
     "npm:@types/react@^18.3.5": "18.3.18",
     "npm:@vercel/analytics@^1.4.1": "1.4.1_react@18.3.1",
+    "npm:@vercel/speed-insights@^1.1.0": "1.1.0_react@18.3.1",
     "npm:@vitejs/plugin-react@^4.3.1": "4.3.4_vite@5.4.11_@babel+core@7.26.0",
     "npm:autoprefixer@^10.4.18": "10.4.20_postcss@8.5.1",
     "npm:eslint-plugin-react-hooks@^5.1.0-rc.0": "5.1.0-rc-fb9a90fa48-20240614_eslint@9.15.0",
@@ -542,6 +543,12 @@
     },
     "@vercel/analytics@1.4.1_react@18.3.1": {
       "integrity": "sha512-ekpL4ReX2TH3LnrRZTUKjHHNpNy9S1I7QmS+g/RQXoSUQ8ienzosuX7T9djZ/s8zPhBx1mpHP/Rw5875N+zQIQ==",
+      "dependencies": [
+        "react"
+      ]
+    },
+    "@vercel/speed-insights@1.1.0_react@18.3.1": {
+      "integrity": "sha512-rAXxuhhO4mlRGC9noa5F7HLMtGg8YF1zAN6Pjd1Ny4pII4cerhtwSG4vympbCl+pWkH7nBS9kVXRD4FAn54dlg==",
       "dependencies": [
         "react"
       ]
@@ -1606,6 +1613,7 @@
         "npm:@types/react-dom@^18.3.0",
         "npm:@types/react@^18.3.5",
         "npm:@vercel/analytics@^1.4.1",
+        "npm:@vercel/speed-insights@^1.1.0",
         "npm:@vitejs/plugin-react@^4.3.1",
         "npm:autoprefixer@^10.4.18",
         "npm:eslint-plugin-react-hooks@^5.1.0-rc.0",
