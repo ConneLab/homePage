@@ -89,7 +89,11 @@ function App() {
               お客様のビジネスの成長をサポートします。
             </p>
             <button className="bg-[#2A2522] text-white px-8 py-3 rounded-full hover:bg-[#2A2522]/90 transition-colors inline-flex items-center space-x-2">
-              <span>お問い合わせ</span>
+              <a
+                href="#contact"
+              >
+                お問い合わせ
+              </a>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
