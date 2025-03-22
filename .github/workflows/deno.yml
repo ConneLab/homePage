@@ -13,25 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # リポジトリをチェックアウト
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Deno のセットアップ
       - name: Setup Deno
         uses: denoland/setup-deno@v2
         with:
-          deno-version: v2.0  # 必要に応じて最新バージョンを指定
-          cache: true  # 依存関係のキャッシュを有効化
+          deno-version: v2.0
+          cache: true 
 
-      # 依存関係のインストール
       - name: Cache dependencies
         run: deno i 
 
-      # Lint チェック
       - name: Lint
         run: deno lint
 
-      # Vite サーバーのビルド
       - name: Build Vite
         run: deno task build

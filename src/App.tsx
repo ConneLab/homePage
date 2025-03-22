@@ -164,8 +164,32 @@ function App() {
         </div>
       </section>
 
+      {/* Production Section */}
+      <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4">
+            <div>
+              <h2 className="text-3xl" style={{marginTop: 50, fontWeight: "bold", textAlign: "center"}}>
+                制作物
+              </h2>
+              <iframe
+              src="https://note.com/embed/notes/nf0c8a1da6437"
+              style={{
+                border: "0",
+                display: "block",
+                width: "494px",
+                padding: "0px",
+                margin: "25px auto",
+                position: "static",
+                visibility: "visible",
+              }}
+              height="250"
+            />
+          </div>
+        </div>
+        </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-[#2A2522] mb-12">
             お問い合わせ
@@ -186,6 +210,7 @@ function App() {
                   ref={subjectRef}
                   type="text"
                   id="subject"
+                  style={{backgroundColor: "white"}}
                   className="mt-1 block w-full rounded-md border-[#2A2522]/20 shadow-sm focus:border-[#2A2522] focus:ring-[#2A2522] bg-[#FAF7F2]"
                 />
               </div>
@@ -200,6 +225,7 @@ function App() {
                   ref={nameRef}
                   type="text"
                   id="name"
+                  style={{backgroundColor: "white"}}
                   className="mt-1 block w-full rounded-md border-[#2A2522]/20 shadow-sm focus:border-[#2A2522] focus:ring-[#2A2522] bg-[#FAF7F2]"
                 />
               </div>
@@ -214,6 +240,7 @@ function App() {
                   ref={messageRef}
                   id="message"
                   rows={4}
+                  style={{backgroundColor: "white"}}
                   className="mt-1 block w-full rounded-md border-[#2A2522]/20 shadow-sm focus:border-[#2A2522] focus:ring-[#2A2522] bg-[#FAF7F2]"
                 ></textarea>
               </div>
@@ -228,6 +255,7 @@ function App() {
         </div>
       </section>
 
+      
       {/* Footer */}
       <footer className="bg-[#2A2522] text-white py-12">
         <div className="max-w-7xl mx-auto px-4">
