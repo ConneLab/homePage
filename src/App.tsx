@@ -176,7 +176,7 @@ function App() {
               style={{
                 border: "0",
                 display: "block",
-                width: "494px",
+                width: "350px",
                 padding: "0px",
                 margin: "25px auto",
                 position: "static",
