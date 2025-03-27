@@ -1,12 +1,12 @@
-import {useRef} from "react";
+import { useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 import {
   Building2,
   Sparkles,
   ArrowRight,
   Github,
-  Linkedin,
-  Twitter,
+  Linkedin as _Linkedin,
+  Twitter as _Twitter,
 } from "lucide-react";
 
 function openEmail(event, subjectRef, nameRef, messageRef) {
@@ -20,9 +20,23 @@ function openEmail(event, subjectRef, nameRef, messageRef) {
 }
 
 function App() {
+  const [isTabVisible, setIsTabVisible] = useState(false);
+  const [_showTab, setShowTab] = useState(true);
+
   const subjectRef = useRef(null);
   const nameRef = useRef(null);
   const messageRef = useRef(null);
+
+  const changeTab = () => {
+    if (isTabVisible) {
+      setIsTabVisible(false);
+      setShowTab(false);
+    } else {
+      setIsTabVisible(true);
+      setShowTab(true);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
       <Helmet>
@@ -44,14 +58,27 @@ function App() {
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-sm fixed w-full z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between relative">
             <div className="flex items-center space-x-2">
               <Building2 className="h-8 w-8 text-[#2A2522]" />
               <span className="text-2xl font-semibold text-[#2A2522]">
                 ConneLab
               </span>
             </div>
-            <div className="hidden md:flex space-x-8">
+            <button
+              onClick={changeTab}
+              className="md:hidden text-2xl text-[#2A2522]"
+            >
+              {isTabVisible ? "✕" : "☰"}
+            </button>
+
+            <div
+              className={`flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 fixed md:static top-full left-0 w-full md:w-auto bg-white/95 backdrop-blur-sm md:bg-transparent px-4 md:px-0 py-6 md:py-0 transition-transform duration-300 md:translate-y-0 md:opacity-100 z-20 ${
+                isTabVisible
+                  ? "translate-y-0 opacity-100"
+                  : "-translate-y-2 opacity-0 pointer-events-none md:pointer-events-auto"
+              }`}
+            >
               <a
                 href="#services"
                 className="text-[#2A2522]/80 hover:text-[#2A2522] transition-colors"
@@ -74,7 +101,6 @@ function App() {
           </div>
         </div>
       </nav>
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto">
@@ -89,11 +115,7 @@ function App() {
               お客様のビジネスの成長をサポートします。
             </p>
             <button className="bg-[#2A2522] text-white px-8 py-3 rounded-full hover:bg-[#2A2522]/90 transition-colors inline-flex items-center space-x-2">
-              <a
-                href="#contact"
-              >
-                お問い合わせ
-              </a>
+              <a href="#contact">お問い合わせ</a>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -166,12 +188,15 @@ function App() {
 
       {/* Production Section */}
       <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-            <div>
-              <h2 className="text-3xl" style={{marginTop: 50, fontWeight: "bold", textAlign: "center"}}>
-                制作物
-              </h2>
-              <iframe
+        <div className="max-w-7xl mx-auto px-4">
+          <div>
+            <h2
+              className="text-3xl"
+              style={{ marginTop: 50, fontWeight: "bold", textAlign: "center" }}
+            >
+              制作物
+            </h2>
+            <iframe
               src="https://note.com/embed/notes/nf0c8a1da6437"
               style={{
                 border: "0",
@@ -186,7 +211,7 @@ function App() {
             />
           </div>
         </div>
-        </section>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20">
@@ -210,7 +235,7 @@ function App() {
                   ref={subjectRef}
                   type="text"
                   id="subject"
-                  style={{backgroundColor: "white"}}
+                  style={{ backgroundColor: "white" }}
                   className="mt-1 block w-full rounded-md border-[#2A2522]/20 shadow-sm focus:border-[#2A2522] focus:ring-[#2A2522] bg-[#FAF7F2]"
                 />
               </div>
@@ -225,7 +250,7 @@ function App() {
                   ref={nameRef}
                   type="text"
                   id="name"
-                  style={{backgroundColor: "white"}}
+                  style={{ backgroundColor: "white" }}
                   className="mt-1 block w-full rounded-md border-[#2A2522]/20 shadow-sm focus:border-[#2A2522] focus:ring-[#2A2522] bg-[#FAF7F2]"
                 />
               </div>
@@ -240,7 +265,7 @@ function App() {
                   ref={messageRef}
                   id="message"
                   rows={4}
-                  style={{backgroundColor: "white"}}
+                  style={{ backgroundColor: "white" }}
                   className="mt-1 block w-full rounded-md border-[#2A2522]/20 shadow-sm focus:border-[#2A2522] focus:ring-[#2A2522] bg-[#FAF7F2]"
                 ></textarea>
               </div>
@@ -255,7 +280,6 @@ function App() {
         </div>
       </section>
 
-      
       {/* Footer */}
       <footer className="bg-[#2A2522] text-white py-12">
         <div className="max-w-7xl mx-auto px-4">
@@ -268,6 +292,7 @@ function App() {
             </div>
             <div className="md:text-right">
               <div className="flex space-x-4 md:justify-end mb-4">
+                {/*
                 <a
                   href="#"
                   className="text-white/80 hover:text-white transition-colors"
@@ -280,8 +305,9 @@ function App() {
                 >
                   <Linkedin className="w-6 h-6" />
                 </a>
+            */}
                 <a
-                  href="#"
+                  href="https://github.com/ConneLab/"
                   className="text-white/80 hover:text-white transition-colors"
                 >
                   <Github className="w-6 h-6" />
