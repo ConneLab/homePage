@@ -128,7 +128,7 @@ function App() {
           <h2 className="text-3xl font-bold text-center text-[#2A2522] mb-12">
             サービス
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 icon: <Sparkles className="w-8 h-8" />,
@@ -141,6 +141,12 @@ function App() {
                 title: "システム構築",
                 description:
                   "スケーラブルで安全なシステムアーキテクチャの設計と実装",
+              },
+              {
+                icon: <Sparkles className="w-8 h-8" />,
+                title: "塾講師",
+                description:
+                  "プログラミングやゲームの開発スキルの指導を行っています",
               },
             ].map((service, index) => (
               <div key={index} className="bg-[#FAF7F2] p-8 rounded-2xl">
@@ -158,7 +164,7 @@ function App() {
       {/* About Section */}
       <section id="about" className="py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-1 gap-50 items-center">
             <div>
               {/*<img 
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000"
